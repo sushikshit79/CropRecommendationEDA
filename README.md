@@ -75,6 +75,8 @@ The primary data source for this project is an agricultural production dataset c
 
 Below is the summary table of missing values
 
+![https://github.com/sushikshit79/CropRecommendationEDA/blob/main/images/missing_data_summary.png](https://github.com/sushikshit79/CropRecommendationEDA/blob/main/images/missing_data_summary.png)
+
 
 ### Methodology
 This project will use supervised machine learning classification techniques, where the target variable is the commodity (crop) and all other attributes are treated as features. The analysis will follow the CRISP-DM strategy and will include business understanding, data preprocessing, feature engineering, categorical encoding, and model training. Baseline models such as Dummy calssifiers and Logistic Regression will be used for interpretability, along with some hyper parameters with advanced models such as Logistic Regression and Random Forests to capture non-linear relationships. Model performance will be evaluated using accuracy and confusion matrices to assess precision and recall characteristics.
