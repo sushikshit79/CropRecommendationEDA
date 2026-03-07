@@ -63,6 +63,15 @@ The primary data source for this project is an agricultural production dataset c
 
 * The **Value** of the crop can be misleading because yield values are represented in different units, such as bushels or tonnes, as indicated in the **Data Item** column. These values must be standardized to a common unit to enable correct prediction based on crop performance.
 
+### Data Preparation
+* Data attribues like Program, Period, Geo Level, watershed_code, Domain and Domain Category provided by USDA contains constant or non-informative values. Therefore, will not contribute to predictive performance, hence removing to simplify feature dimesions.
+* Data attributes like Week Ending, Zip Code, Region and Watershed are empty, hence removing them to simplify feature dimesions
+
+#### Missing Data Analysis
+* Over 80% of the data is missing in **CV (%)**, which limits its usefulness for analysis and modeling. Given its high level of missingness and secondary relevance to crop prediction, retaining this column does not add meaningful value.
+* **Ag District** has 204 missing values. Additionally, Ag District remains consistent for a given combination of State and County and does not provide additional variance beyond what is already captured by State and County. As a result, it is not relevant to the current business requirement.
+* **County ANSI** is a coded representation of the County attribute and does not introduce additional dimensional variance compared to the County name itself. Replacing County with County ANSI for modeling purposes would require additional conversion logic between inputs and outputs without offering meaningful predictive benefits. 
+* Based on these observations, removing the columns **Ag District, County ANSI, and CV (%)** helps reduce dimensionality while retaining the most relevant features that directly impact prediction performance.
 
 ### Methodology
 This project will use supervised machine learning classification techniques, where the target variable is the commodity (crop) and all other attributes are treated as features. The analysis will follow the CRISP-DM strategy and will include business understanding, data preprocessing, feature engineering, categorical encoding, and model training. Baseline models such as Dummy calssifiers and Logistic Regression will be used for interpretability, along with some hyper parameters with advanced models such as Logistic Regression and Random Forests to capture non-linear relationships. Model performance will be evaluated using accuracy and confusion matrices to assess precision and recall characteristics.
