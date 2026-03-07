@@ -63,15 +63,6 @@ The primary data source for this project is an agricultural production dataset c
 
 * The **Value** of the crop can be misleading because yield values are represented in different units, such as bushels or tonnes, as indicated in the **Data Item** column. These values must be standardized to a common unit to enable correct prediction based on crop performance.
 
-### Data Cleanup and Preparation
-* Data attribues like Program, Period, Geo Level, watershed_code, Domain and Domain Category provided by USDA contains constant or non-informative values. Therefore, will not contribute to predictive performance, hence removing to simplify feature dimesions.
-* Data attributes like Week Ending, Zip Code, Region and Watershed are empty, hence removing them to simplify feature dimesions
-* Removal of CV (%) Column: The CV (%) column was removed because approximately 80% of the values were missing, making it unreliable and not useful for meaningful analysis or modeling.
-* Handling Missing County ANSI Codes: Missing values in the County ANSI column were replaced with the placeholder value 999, which is commonly used in U.S. data systems to represent unknown or aggregated counties. This approach preserves dataset completeness while avoiding incorrect misclassification.
-* Extraction of Structured Fields from Data Item: The Data Item field contained multiple pieces of information embedded in text. This field was parsed to extract crop name, sub-category, and measurement unit, allowing these attributes to be represented as structured columns/features suitable for analysis and modeling.
-* Standardization of Sub_Commodity Values: The Sub_Commodity column was standardized by removing identifiers such as “irrigated” and “non-irrigated”. This ensures that the same crop sub-category is consistently represented across records, reducing category fragmentation and improving input quality.
-* Standardization of Yield Units: A yield conversion reference sheet was created through research using crop information available from USDA resources and other agricultural data sources. This reference was used to convert yield measurements reported in bushels per acre (BU/Acre) and tons per acre into a standardized unit of pounds per acre (lbs/acre). Standardizing yield units ensures that crop yields are comparable across different commodities and measurement systems.
-
 #### Missing Data Analysis
 * Over 80% of the data is missing in **CV (%)**, which limits its usefulness for analysis and modeling. Given its high level of missingness and secondary relevance to crop prediction, retaining this column does not add meaningful value.
 * **Ag District** has 204 missing values. Additionally, Ag District remains consistent for a given combination of State and County and does not provide additional variance beyond what is already captured by State and County. As a result, it is not relevant to the current business requirement.
@@ -81,6 +72,15 @@ The primary data source for this project is an agricultural production dataset c
 Below is the summary table of missing values
 
 ![https://github.com/sushikshit79/CropRecommendationEDA/blob/main/images/missing_data_summary.png](https://github.com/sushikshit79/CropRecommendationEDA/blob/main/images/missing_data_summary.png)
+
+### Data Cleanup and Preparation
+* Data attribues like Program, Period, Geo Level, watershed_code, Domain and Domain Category provided by USDA contains constant or non-informative values. Therefore, will not contribute to predictive performance, hence removing to simplify feature dimesions.
+* Data attributes like Week Ending, Zip Code, Region and Watershed are empty, hence removing them to simplify feature dimesions
+* Removal of CV (%) Column: The CV (%) column was removed because approximately 80% of the values were missing, making it unreliable and not useful for meaningful analysis or modeling.
+* Handling Missing County ANSI Codes: Missing values in the County ANSI column were replaced with the placeholder value 999, which is commonly used in U.S. data systems to represent unknown or aggregated counties. This approach preserves dataset completeness while avoiding incorrect misclassification.
+* Extraction of Structured Fields from Data Item: The Data Item field contained multiple pieces of information embedded in text. This field was parsed to extract crop name, sub-category, and measurement unit, allowing these attributes to be represented as structured columns/features suitable for analysis and modeling.
+* Standardization of Sub_Commodity Values: The Sub_Commodity column was standardized by removing identifiers such as “irrigated” and “non-irrigated”. This ensures that the same crop sub-category is consistently represented across records, reducing category fragmentation and improving input quality.
+* Standardization of Yield Units: A yield conversion reference sheet was created through research using crop information available from USDA resources and other agricultural data sources. This reference was used to convert yield measurements reported in bushels per acre (BU/Acre) and tons per acre into a standardized unit of pounds per acre (lbs/acre). Standardizing yield units ensures that crop yields are comparable across different commodities and measurement systems.
 
 
 ### Methodology
