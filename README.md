@@ -23,7 +23,45 @@ Can a machine learning model accurately recommend the most suitable agricultural
 ### Data Sources
 The primary data source for this project is an agricultural production dataset containing state- and county-level crop information, including irrigated and non-irrigated acreage and yield. The data is obtained from the USDA (United States Department of Agriculture) QuickStats database and is downloaded as a CSV report from https://quickstats.nass.usda.gov/. This dataset serves as the core data source for model training and evaluation.
 
-#### Data Analysis
+### Data Analysis
+
+#### Data Features and Descriptions 
+* Program – USDA provide the data as two programs SURVEY and CENSUS, this project chooses information collected as part of Survey Program.
+* Year – Year in which the data was collected.
+* Period – Reporting period (e.g., YEAR). this project choose to evaluate information collected on yearly basis.
+* Geo Level – Level at which the geographic detail was collected like STATE or COUNTY.
+* State – Name of the state.
+* State ANSI – Numeric ANSI/FIPS code for the state.
+* Ag District –  It is a designated geographic area, typically initiated by landowners and certified by state/local governments, designed to protect and promote active farming.
+* Ag District Code – Code for the agricultural district.
+* County – Name of the County in a state.
+* County ANSI – Numeric ANSI/FIPS code for the county.
+* Zip Code – ZIP code at county level.
+* Region – Farm Resource Regions" are categorized on shared characteristics rather than rigid state boundaries. These regions are derived from cluster analysis of commodities produced, soil, climate, and water. 
+* watershed_code – Numeric code for watershed area.
+* Watershed – It is defined as a specific area of land—ranging from small plots to vast regions—where all water, including rain and snowmelt, drains to a common outflow point, such as a creek, river, lake, or reservoir.
+* Commodity – Type of Crop type.
+* Data Item – It is a field that provide a combination of crop sub type and yield measured in BU(Bushels) or Tonnes per Acre 
+* Domain – It refers to the sub-classification attribute used to break down or subset a data item , such as production, acreage, or yield. With classification of measurement in TOTAL or IRRIGATED. This project choose to limit the data attributes for TOTAL based on  yield.
+* Domain Category – Subcategory of domain is not specified by USDA.
+
+#### Observations
+
+* Several data attribues like **Program, Period, Geo Level, watershed_code, Domain and Domain Category** provided by USDA contains constant or non-informative values. Therefore, will not contribute to predictive performance.
+    * Program has constant value "SURVEY"
+    * Period has constant value "YEAR"
+    * Geo Level has constant value "COUNTY"
+    * watershed_code has constant value "'00000000"
+    * Domain has constant value "TOTAL"
+    * Domain Category has constant value "NOT SPECIFIED"
+
+* Data attributes like **Week Ending, Zip Code, Region and Watershed** are empty.
+
+* **Commodity** provides a generic classification of crops but does not capture further details such as specific varieties within the same crop for example **corn grain vs silage**. The absence of this information may result in farmers, lenders, and other agricultural stakeholders making decisions based on less productive crop options. This limitation can increase lending risk, reduce farm profitability, and lead to higher inventory and operational costs for stakeholders that provide services across the crop production cycle.
+
+* **Data Item** carries a significant amount of information, including sub-categories of crops and the associated yield measurements expressed in different units such as bushels or tonnes. The field by itself is not  useful for analysis and requires additional processing. Decomposing the Data Item into multiple structured features, such as crop sub-category and standardized yield units, enables more meaningful analysis and supports better outcomes for farmers, lenders, and other agricultural stakeholders.
+
+* The **Value** of the crop can be misleading because yield values are represented in different units, such as bushels or tonnes, as indicated in the **Data Item** column. These values must be standardized to a common unit to enable correct prediction based on crop performance.
 
 
 ### Methodology
