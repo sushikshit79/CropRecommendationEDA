@@ -106,12 +106,8 @@ Below is the summary table of missing values
    * Rice dominates in Texas, while barley appears as the leading commodity in Wyoming, demonstrating regional specialization in crop production.
   ![https://github.com/sushikshit79/CropRecommendationEDA/blob/main/images/top_performing_commodity_state%20.png](https://github.com/sushikshit79/CropRecommendationEDA/blob/main/images/top_performing_commodity_state%20.png)
 
-
-
-
 #### Methodology
 This project will use supervised machine learning classification techniques, where the target variable is the commodity (crop) and all other attributes are treated as features. The analysis will follow the CRISP-DM strategy and will include business understanding, data preprocessing, feature engineering, categorical encoding, and model training. Baseline models such as Dummy calssifiers and Logistic Regression will be used for interpretability, along with some hyper parameters with advanced models such as Logistic Regression and Random Forests to capture non-linear relationships. Model performance will be evaluated using accuracy and confusion matrices to assess precision and recall characteristics.
-
 
 #### Feature Engineering
 The dataset contains both categorical and numeric attributes representing geographic, administrative, and yield related information. To prepare the data for modeling, features were grouped into categorical and numerical variables based on their characteristics.
@@ -151,6 +147,28 @@ To establish a reference point for model performance, two baseline models were i
    * The Dummy Classifier will establish a baseline that represents random or distribution-based predictions.
    * The Logistic Regression model will provide an interpretable machine learning approach that can capture meaningful relationships in the dataset.
    * Comparing these two models allows us to determine whether the model is learning useful patterns from the data and provides a foundation for evaluating more advanced algorithms in later stages of the project.
+
+Below are the performance metrics Dummy Classifier and a Logistic Regression classifier.
+
+
+* **Dummy Classifier Observations**
+   * Correctly predicts about 11–12% of samples
+   * Macro Precision / Recall / F1 is 0.04 that projects class imbalance, which means rare clases may never get predicted correctly
+   * ROC AUC is 0.5,  which means no discrimination and behaving correctly on random ranking
+
+The stratified DummyClassifier achieved an accuracy of 11.8% with macro F1 of 0.042, establishing the statistical performance floor. Any model exceeding this baseline demonstrates learned predictive signal beyond random class distribution.
+
+* **Logistic Regression Observations**
+   * Accuracy (68.6%) is substantially higher than the Dummy baseline (11.8%).
+   * Precision indicates that more than half of predicted positives are correct.
+   * Recall demonstrates moderate ability to capture actual positives, suggesting potential improvement through threshold tuning.
+   * The macro ROC AUC of 0.98 indicates strong class separability and ranking capability.
+
+#### Overall Conclusion for Baseline and Simple models
+
+Logistic Regression significantly outperformed the Dummy classifier across all evaluation metrics. With 68.6% accuracy, macro F1 of 0.48, and a macro ROC AUC of 0.98, the model demonstrates strong discriminative ability.
+
+The high ROC AUC suggests the model is well-suited for ranking-based applications such as top-3 crop recommendation, though further  optimization and class-level analysis may improve balanced performance across all crop categories.
 
 ### Next steps
 What suggestions do you have for next steps?
