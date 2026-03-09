@@ -172,7 +172,14 @@ Logistic Regression significantly outperformed the Dummy classifier across all e
 The high ROC AUC suggests the model is well-suited for ranking-based applications such as top-3 crop recommendation, though further  optimization and class-level analysis may improve balanced performance across all crop categories.
 
 ### Next steps
-What suggestions do you have for next steps?
+* **Evaluate Multiple Classification Models:** Train and compare several classification algorithms like Logistic Regression, K-Nearest Neighbors (KNN), Decision Tree, Random Forest and Support Vector Classifier (SVC). These models will help determine which algorithm best captures patterns in the agricultural dataset and produces reliable predictions.
+* **Hyperparameter Tuning:** For each model will be evaluated by multiple hyperparameter configurations to optimize performance. Parameters such as the number of neighbors in KNN, tree depth in Decision Trees, number of estimators in Random Forest, and kernel parameters in SVC will be tested for best performing model configuration.
+* **Ranking-Based Evaluation:** Since the objective of the project is to recommend suitable crops, the models will be evaluated not only on standard classification metrics but also on their ability to correctly rank crop predictions. Metrics such as Top-k accuracy for Top-3 recommendations will be used to measure top predicted options.
+* **Feature Evaluation and Selection:** Analyze the contribution of each feature used in the model, including State, Agricultural District, County, Year, geographic codes, and standardized yield. Features will be evaluated to determine their impact on prediction accuracy and ranking performance.
+* **Feature Reduction:** Identify features that can be removed without significantly affecting model performance. Eliminating non-informative features can reduce model complexity, improve interpretability, and potentially enhance model generalization.
+* **Model Comparison and Selection:** Compare the performance of all trained models using consistent evaluation metrics such as accuracy, precision, recall, F1 score, ROC-AUC, and ranking performance.
+
+**The model that demonstrates the best balance between predictive accuracy and ranking reliability will be selected as the final model for crop recommendation.**
 
 ### Outline of project
 
@@ -182,3 +189,9 @@ What suggestions do you have for next steps?
 
 
 #### Contact and Further Information
+For questions, feedback or additional information regarding this project, please contact:
+
+**Sushikshit Billa**
+Email:sushikshit@gmail.com
+LinkedIn: linkedin.com/in/sushikshit-billa
+
