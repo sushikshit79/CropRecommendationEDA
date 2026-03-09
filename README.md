@@ -172,6 +172,7 @@ Logistic Regression significantly outperformed the Dummy classifier across all e
 The high ROC AUC suggests the model is well-suited for ranking-based applications such as top-3 crop recommendation, though further  optimization and class-level analysis may improve balanced performance across all crop categories.
 
 ### Next steps
+
 * **Evaluate Multiple Classification Models:** Train and compare several classification algorithms like Logistic Regression, K-Nearest Neighbors (KNN), Decision Tree, Random Forest and Support Vector Classifier (SVC). These models will help determine which algorithm best captures patterns in the agricultural dataset and produces reliable predictions.
 * **Hyperparameter Tuning:** For each model will be evaluated by multiple hyperparameter configurations to optimize performance. Parameters such as the number of neighbors in KNN, tree depth in Decision Trees, number of estimators in Random Forest, and kernel parameters in SVC will be tested for best performing model configuration.
 * **Ranking-Based Evaluation:** Since the objective of the project is to recommend suitable crops, the models will be evaluated not only on standard classification metrics but also on their ability to correctly rank crop predictions. Metrics such as Top-k accuracy for Top-3 recommendations will be used to measure top predicted options.
