@@ -67,7 +67,7 @@ The primary data source for this project is an agricultural production dataset c
 * Over 80% of the data is missing in **CV (%)**, which limits its usefulness for analysis and modeling. Given its high level of missingness and secondary relevance to crop prediction, retaining this column does not add meaningful value.
 * **Ag District** has 204 missing values. Additionally, Ag District remains consistent for a given combination of State and County and does not provide additional variance beyond what is already captured by State and County. As a result, it is not relevant to the current business requirement.
 * **County ANSI** is a coded representation of the County attribute and does not introduce additional dimensional variance compared to the County name itself. Replacing County with County ANSI for modeling purposes would require additional conversion logic between inputs and outputs without offering meaningful predictive benefits. 
-* Based on these observations, removing the columns **Ag District, County ANSI, and CV (%)** helps reduce dimensionality while retaining the most relevant features that directly impact prediction performance.
+* Based on these observations, removing the columns **CV (%)** helps reduce dimensionality while retaining the most relevant features that directly impact prediction performance. While removal of columns like Ag District and County ANSI will be evaluated based on their feature importance.
 
 Below is the summary table of missing values
 
