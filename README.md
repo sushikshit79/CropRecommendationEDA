@@ -148,8 +148,9 @@ To establish a reference point for model performance, two baseline models were i
    * The Logistic Regression model will provide an interpretable machine learning approach that can capture meaningful relationships in the dataset.
    * Comparing these two models allows us to determine whether the model is learning useful patterns from the data and provides a foundation for evaluating more advanced algorithms in later stages of the project.
 
-Below are the performance metrics Dummy Classifier and a Logistic Regression classifier.
+Below are the performance metrics for Dummy Classifier and a Logistic Regression classifier.
 
+![https://github.com/sushikshit79/CropRecommendationEDA/blob/main/images/model_comparison.jpg](https://github.com/sushikshit79/CropRecommendationEDA/blob/main/images/model_comparison.jpg)
 
 * **Dummy Classifier Observations**
    * Correctly predicts about 11–12% of samples
