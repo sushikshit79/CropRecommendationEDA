@@ -143,7 +143,14 @@ The dataset was divided into training and testing subsets to evaluate the perfor
       * 30% of the data was reserved as a test dataset to objectively evaluate model performance.
 
 ### Results
-What did your research find?
+
+**Baseline Model Evaluation**
+Baseline modeling establishes a reference point for model performance before applying more complex machine learning algorithms. It helps determine whether a predictive model is actually learning meaningful patterns from the data.
+
+To establish a reference point for model performance, two baseline models were implemented: a Dummy Classifier and a Logistic Regression classifier.
+   * The Dummy Classifier will establish a baseline that represents random or distribution-based predictions.
+   * The Logistic Regression model will provide an interpretable machine learning approach that can capture meaningful relationships in the dataset.
+   * Comparing these two models allows us to determine whether the model is learning useful patterns from the data and provides a foundation for evaluating more advanced algorithms in later stages of the project.
 
 ### Next steps
 What suggestions do you have for next steps?
