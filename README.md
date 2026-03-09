@@ -107,22 +107,23 @@ Below is the summary table of missing values
   ![https://github.com/sushikshit79/CropRecommendationEDA/blob/main/images/top_performing_commodity_state%20.png](https://github.com/sushikshit79/CropRecommendationEDA/blob/main/images/top_performing_commodity_state%20.png)
 
 
-### Feature Engineering
-The dataset contains both categorical and numeric attributes representing geographic, administrative, and yield related information. To prepare the data for modeling, features were grouped into categorical and numerical variables based on their characteristics and role in prediction.
+
 
 #### Methodology
 This project will use supervised machine learning classification techniques, where the target variable is the commodity (crop) and all other attributes are treated as features. The analysis will follow the CRISP-DM strategy and will include business understanding, data preprocessing, feature engineering, categorical encoding, and model training. Baseline models such as Dummy calssifiers and Logistic Regression will be used for interpretability, along with some hyper parameters with advanced models such as Logistic Regression and Random Forests to capture non-linear relationships. Model performance will be evaluated using accuracy and confusion matrices to assess precision and recall characteristics.
 
-##### Categorical Features
-The following fields were treated as categorical variables because they represent geographic or administrative classifications rather than measurable numeric quantities:
 
+#### Feature Engineering
+The dataset contains both categorical and numeric attributes representing geographic, administrative, and yield related information. To prepare the data for modeling, features were grouped into categorical and numerical variables based on their characteristics.
+
+* **Categorical Features:**
+The following fields were treated as categorical variables because they represent geographic or administrative classifications rather than measurable numeric quantities
     * State – Represents the U.S. state where the crop yield was recorded.
     * Ag District – Agricultural district grouping within a state.
     * County – County level geographic identifier.
 
-##### Numeric Features
-The following variables were treated as numerical features because they represent quantitative values or encoded identifiers:
-
+* **Numeric Features:**
+The following variables were treated as numerical features because they represent quantitative values or encoded identifiers
     * Year – Indicates the year of the agricultural observation and allows the model to capture trends in crop productivity.
     * State ANSI – Numeric code representing the state. 
     * Ag District Code – Numeric identifier for the agricultural district.
@@ -130,9 +131,8 @@ The following variables were treated as numerical features because they represen
     * county_missing_flag – Binary indicator identifying records where the county code was originally missing and replaced with a placeholder.
     * std_yield – Standardized crop yield measured in pounds per acre, representing productivity of the crop.
 
-##### Target Variable
-New target variable is constructed for following reasons:
-
+* **Target Variable:**
+New target variable is constructed for following reasons
     * To create a more precise prediction target, a new variable called target_crop was engineered by combining the Commodity and Sub_Commodity fields.
     * This approach ensures that the model predicts both the main crop category and its specific sub-category, enabling more granular crop recommendations.
 
