@@ -86,20 +86,25 @@ Below is the summary table of missing values
 * **Average Yield Trend Over Time**
    * The average standardized yield (lbs/acre) shows a steady increase over time, indicating improvements in agricultural productivity across the dataset.
    * The upward trend indicates that historical yield data carries predictive value and can be used as a meaningful feature in modeling crop suitability.
+    ![https://github.com/sushikshit79/CropRecommendationEDA/blob/main/images/avg_yield_over_time.png](https://github.com/sushikshit79/CropRecommendationEDA/blob/main/images/avg_yield_over_time.png)
 * **Yield Distribution by State**
    * Yield distribution varies significantly across the 11 states included in the dataset, indicating strong regional differences in agricultural productivity.
    * Some states show higher variability and wider distributions, suggesting diverse crop types and farming conditions within those regions.
    * The geographic variations reinforce the importance of including state and county level features in the predictive model.
+   ![https://github.com/sushikshit79/CropRecommendationEDA/blob/main/images/yield_by_state.png](https://github.com/sushikshit79/CropRecommendationEDA/blob/main/images/yield_by_state.png)
 * **Yield Distribution by Commodity**
    * Yield levels differ substantially across commodities, highlighting commodity-specific productivity patterns.
    * crops such as corn, rice, and wheat show moderate yield distributions, reflecting common staple crops grown across multiple regions.
+   ![https://github.com/sushikshit79/CropRecommendationEDA/blob/main/images/yield_by_commodity.png](https://github.com/sushikshit79/CropRecommendationEDA/blob/main/images/yield_by_commodity.png)
 * **Distribution of Standardized Yield**
    * The standardized yield distribution is right-skewed, with a small number of extremely high yield values acting as outliers.
    * Addressing skewness in yield data helps reduce bias and improves the stability of model training.
+   ![https://github.com/sushikshit79/CropRecommendationEDA/blob/main/images/std_yield_dist.png](https://github.com/sushikshit79/CropRecommendationEDA/blob/main/images/std_yield_dist.png)
 * **Top Performing Commodity by State (Last Five Years)**
    * Analysis of the last five years indicates consistent dominance of certain crops within specific states.
    * The stability of top commodities over multiple years suggests that historical performance can be used as a reliable signal for crop recommendation models.
    * Rice dominates in Texas, while barley appears as the leading commodity in Wyoming, demonstrating regional specialization in crop production.
+  ![https://github.com/sushikshit79/CropRecommendationEDA/blob/main/images/top_performing_commodity_state%20.png](https://github.com/sushikshit79/CropRecommendationEDA/blob/main/images/top_performing_commodity_state%20.png)
 
 
 ### Methodology
