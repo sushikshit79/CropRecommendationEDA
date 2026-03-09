@@ -184,7 +184,8 @@ The high ROC AUC suggests the model is well-suited for ranking-based application
 
 ### Outline of project
 
-- [(https://github.com/sushikshit79/CropRecommendationEDA/blob/main/crop_prediction_eda.ipynb)](https://github.com/sushikshit79/CropRecommendationEDA/blob/main/crop_prediction_eda.ipynb)
+
+- **Link to Project Notebook:** [(https://github.com/sushikshit79/CropRecommendationEDA/blob/main/crop_prediction_eda.ipynb)](https://github.com/sushikshit79/CropRecommendationEDA/blob/main/crop_prediction_eda.ipynb)
 
 
 #### Contact and Further Information
