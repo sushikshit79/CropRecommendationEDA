@@ -136,6 +136,12 @@ New target variable is constructed for following reasons
     * To create a more precise prediction target, a new variable called target_crop was engineered by combining the Commodity and Sub_Commodity fields.
     * This approach ensures that the model predicts both the main crop category and its specific sub-category, enabling more granular crop recommendations.
 
+* **Train/Test Split:**
+The dataset was divided into training and testing subsets to evaluate the performance of the machine learning models on unseen data.
+   * A 70%–30% split was used
+      * 70% of the data was used for training the model, allowing the algorithm to learn patterns.
+      * 30% of the data was reserved as a test dataset to objectively evaluate model performance.
+
 ### Results
 What did your research find?
 
