@@ -82,6 +82,25 @@ Below is the summary table of missing values
 * Standardization of Sub_Commodity Values: The Sub_Commodity column was standardized by removing identifiers such as “irrigated” and “non-irrigated”. This ensures that the same crop sub-category is consistently represented across records, reducing category fragmentation and improving input quality.
 * Standardization of Yield Units: A yield conversion reference sheet was created through research using crop information available from USDA resources and other agricultural data sources. This reference was used to convert yield measurements reported in bushels per acre (BU/Acre) and tons per acre into a standardized unit of pounds per acre (lbs/acre). Standardizing yield units ensures that crop yields are comparable across different commodities and measurement systems.
 
+#### Exploratory Data Analysis (EDA) – Key Observations
+* **Average Yield Trend Over Time**
+   * The average standardized yield (lbs/acre) shows a steady increase over time, indicating improvements in agricultural productivity across the dataset.
+   * The upward trend indicates that historical yield data carries predictive value and can be used as a meaningful feature in modeling crop suitability.
+* **Yield Distribution by State**
+   * Yield distribution varies significantly across the 11 states included in the dataset, indicating strong regional differences in agricultural productivity.
+   * Some states show higher variability and wider distributions, suggesting diverse crop types and farming conditions within those regions.
+   * The geographic variations reinforce the importance of including state and county level features in the predictive model.
+* **Yield Distribution by Commodity**
+   * Yield levels differ substantially across commodities, highlighting commodity-specific productivity patterns.
+   * crops such as corn, rice, and wheat show moderate yield distributions, reflecting common staple crops grown across multiple regions.
+* **Distribution of Standardized Yield**
+   * The standardized yield distribution is right-skewed, with a small number of extremely high yield values acting as outliers.
+   * Addressing skewness in yield data helps reduce bias and improves the stability of model training.
+* **Top Performing Commodity by State (Last Five Years)**
+   * Analysis of the last five years indicates consistent dominance of certain crops within specific states.
+   * The stability of top commodities over multiple years suggests that historical performance can be used as a reliable signal for crop recommendation models.
+   * Rice dominates in Texas, while barley appears as the leading commodity in Wyoming, demonstrating regional specialization in crop production.
+
 
 ### Methodology
 This project will use supervised machine learning classification techniques, where the target variable is the commodity (crop) and all other attributes are treated as features. The analysis will follow the CRISP-DM strategy and will include business understanding, data preprocessing, feature engineering, categorical encoding, and model training. Baseline models such as Dummy calssifiers and Logistic Regression will be used for interpretability, along with some hyper parameters with advanced models such as Logistic Regression and Random Forests to capture non-linear relationships. Model performance will be evaluated using accuracy and confusion matrices to assess precision and recall characteristics.
