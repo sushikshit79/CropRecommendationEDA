@@ -192,7 +192,7 @@ The high ROC AUC suggests the model is well-suited for ranking-based application
 #### Contact and Further Information
 For questions, feedback or additional information regarding this project, please contact:
 
-**Sushikshit Billa**
-Email:sushikshit@gmail.com
+**Sushikshit Billa**\
+Email:sushikshit@gmail.com\
 LinkedIn: linkedin.com/in/sushikshit-billa
 
